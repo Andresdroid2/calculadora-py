@@ -41,7 +41,7 @@ if st.button("Calcular"):
             f_lamb = sp.lambdify(x, f, "numpy")
 
         Y = f_lamb(X)
-        Y[np.abs(Y) > 1e3] = np.nan  # evitar valores enormes
+        Y[np.abs(Y) > 100] = np.nan  # evitar valores enormes
 
         # Calcular límites laterales
         limite_izq = sp.limit(f, x, punto, dir='-')
